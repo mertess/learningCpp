@@ -1,0 +1,6 @@
+﻿  LearningCpp.cpp
+  Smthing.cpp
+C:\Users\trtr\source\repos\LearningCpp\LearningCpp\Smthing.cpp(43,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\trtr\source\repos\LearningCpp\LearningCpp\Smthing.cpp(45,27): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+  LearningCpp.vcxproj -> C:\Users\trtr\source\repos\LearningCpp\Debug\LearningCpp.exe
