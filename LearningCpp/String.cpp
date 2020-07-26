@@ -61,3 +61,28 @@ void String::swap(String& str)
     std::swap(this->str, str.str);
 }
 
+//memory leaks
+String const& String::operator[](int i) const
+{
+    if (this->l_ptr == 0)
+    {
+        String* str = new String(&this->str[i]);
+        str->l_ptr = str->get_str();
+        str->index_substr = i;
+        return *str; 
+    } 
+    char* new_str = new char[i - this->index_substr];
+    for (int j = 0; j < i - this->index_substr; j++)
+    {
+        new_str[j] = this->l_ptr[j];
+    }
+    delete this;
+    String* str = new String(new_str);
+    return *str;
+}
+
+char* String::get_str() const
+{
+    return this->str;
+}
+

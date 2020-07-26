@@ -6,42 +6,26 @@
 #include "Point.h"
 #include "Smthing.h"
 #include <cstdlib>
+#include "String.h"
+#include "SharedPtr.h"
 using namespace std;
 #define MAX(x, y, r) int sx = x; int sy = y; if (sx > sy) r = sx; else r = sy;
 
-
 int main()
 {
-    Cls cl('a', 6, 7);
-    get_c(cl);
-    get_d(cl);
-    get_i(cl);
-
-    /*my_struct s(5, 6);
-    getA(s);
-    getB(s);*/
-
-    /*int a[] = { 1, 2, 3, 4, 5 };
-    rotate(a, 5, 2);
-    for (int i = 0; i < 5; i++) {
-        cout << a[i] << endl;
-    }*/
-
-    /*const char text[] = "Hello world";
-    const char pattern[] = "";
-    cout << strLenght(text, pattern);*/
-
-   /* int* m[3] = { new int[3] { 5, 7 ,8 }, new int[3] { 4, 2, 6 }, new int[3] { 9, 0, 1 } };
-    swap_min(m, 3, 3);
-    for (int i = 0; i < 3; i++)
+    SharedStringPtr pt;
     {
-        for (int j = 0; j < 3; j++)
+        String* hello = new String("Hello");
+        pt.reset(hello);
+        cout << pt.get_counter()->get_value() << endl;
+        SharedStringPtr pt2 = pt;
+        cout << pt.get_counter()->get_value() << endl;
         {
-            cout << m[i][j] << ' ';
+            SharedStringPtr pt3 = pt;
+            cout << pt.get_counter()->get_value() << endl;
         }
-        cout << endl;
-    }*/
-
-
+        cout << pt.get_counter()->get_value() << endl;
+    }
+    cout << pt.get_counter()->get_value() << endl;
 	return 0;
 }

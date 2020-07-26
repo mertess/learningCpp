@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <iostream>
 
 struct String
 {
@@ -15,6 +16,10 @@ struct String
 	//через конст. экземпляр класса можно обращаться только к константным методам
 	size_t Size() const;
 	size_t& Size();
+	String const& operator [](int i) const;
+	char* get_str() const;
+	const char* l_ptr = 0;
+	int index_substr;
 private:
 	size_t size;
 	char* str;

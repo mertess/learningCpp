@@ -147,13 +147,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Inheritance.cpp" />
     <ClCompile Include="LearningCpp.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="SharedStringPtr.cpp" />
     <ClCompile Include="Smthing.cpp" />
     <ClCompile Include="String.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Inheritance.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="SharedPtr.h" />
     <ClInclude Include="Smthing.h" />
     <ClInclude Include="String.h" />
   </ItemGroup>
