@@ -8,11 +8,16 @@
 #include <cstdlib>
 #include "String.h"
 #include "SharedPtr.h"
+#include "Array.h"
 using namespace std;
-#define MAX(x, y, r) int sx = x; int sy = y; if (sx > sy) r = sx; else r = sy;
+#define MAX(x, y, r){ int sx = x; int sy = y; if (sx > sy) r = sx; else r = sy }
 
 int main()
 {
+    Array<int> arr(5);
+    Array<int>* new_arr = arr.clone();
+    for (int i = 0; i < 5; i++)
+        cout << new_arr->operator[](i) << endl;
     SharedStringPtr pt;
     {
         String* hello = new String("Hello");
