@@ -1,14 +1,2 @@
 ﻿  LearningCpp.cpp
-C:\Users\trtr\source\repos\LearningCpp\LearningCpp\Array.h(10,2): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\trtr\source\repos\LearningCpp\LearningCpp\Array.h(8): message : во время компиляции функции-члена класс шаблон "Array<int>::Array(size_t,const T &)"
-          with
-          [
-              T=int
-          ]
-C:\Users\trtr\source\repos\LearningCpp\LearningCpp\LearningCpp.cpp(17): message : выполняется компиляция ссылки на экземпляр шаблон функции "Array<int>::Array(size_t,const T &)"
-          with
-          [
-              T=int
-          ]
-C:\Users\trtr\source\repos\LearningCpp\LearningCpp\LearningCpp.cpp(17): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Array<int>"
   LearningCpp.vcxproj -> C:\Users\trtr\source\repos\LearningCpp\Debug\LearningCpp.exe
