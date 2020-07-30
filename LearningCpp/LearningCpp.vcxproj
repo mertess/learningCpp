@@ -158,6 +158,7 @@
     <ClInclude Include="Array.h" />
     <ClInclude Include="ICloneable.h" />
     <ClInclude Include="Inheritance.h" />
+    <ClInclude Include="MultiInheritance.h" />
     <ClInclude Include="PartialSpecializationTemplates.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="SharedPtr.h" />

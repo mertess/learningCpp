@@ -29,4 +29,18 @@ template <class T>
 class SomeCollection{};
 
 template<template<class T> class Collection>
-Collection<string> toString(Collection<int> coll) { return Collecion<string>; }
+Collection<string> toString(Collection<int> coll) { return Collection<string>(); }
+
+//неплохая фича с ограничением на передаваемый тип параметра
+template <class T>
+class SomeClass
+{
+public:
+	typedef T value_type;
+};
+
+template <class T>
+void method(const T& someClass, typename T::value_type const& value)
+{
+
+}
