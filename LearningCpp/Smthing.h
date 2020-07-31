@@ -26,3 +26,5 @@ int& getB(my_struct& st);
 void get_c(Cls& cls);
 void get_d(Cls& cls);
 void get_i(Cls& cls);
+
+static int func();

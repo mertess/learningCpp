@@ -12,6 +12,7 @@
 #include "PartialSpecializationTemplates.h"
 #include "MultiInheritance.h"
 #include "MethodAndFieldsPtrs.h"
+#include "14standart.h"
 using namespace std;
 #define MAX(x, y, r){ int sx = x; int sy = y; if (sx > sy) r = sx; else r = sy }
 
@@ -25,10 +26,10 @@ int main()
     SomeClass<int> arr;
     method(arr, 5.1);
     //--------------------------------------------------------
-    cout << SameType<int, int>::value << endl; //true
-    cout << SameType<float, int>::value << endl; //false
-    cout << SameType<int, int&>::value << endl; //false
-    cout << SameType<int, const int>::value << endl; //false
+    //cout << SameType<int, int>::value << endl; //true
+    //cout << SameType<float, int>::value << endl; //false
+    //cout << SameType<int, int&>::value << endl; //false
+    //cout << SameType<int, const int>::value << endl; //false
     //--------------------------------------------------------
     int a = 27;
     int const b = 412;
@@ -63,10 +64,11 @@ int main()
     //вызов ощуствляется через экземпляр класса SSPtr, например: (s->*method)(params)
     String s1(5, 'a');
     String s2(6, 'b');
-    cout << compare(s1, s2, &String::Size) << " compare" << endl;
+    //cout << compare(s1, s2, &String::Size) << " compare" << endl;
+    //--------------------------------------------------------
+    print_values(std::cout, 0, 3.5);
     //--------------------------------------------------------
     SharedStringPtr pt;
-    SharedStringPtr* ptr = new SharedStringPtr();
     {
         String* hello = new String("Hello");
         pt.reset(hello);

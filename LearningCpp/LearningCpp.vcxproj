@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="14standart.cpp" />
     <ClCompile Include="Inheritance.cpp" />
     <ClCompile Include="LearningCpp.cpp" />
     <ClCompile Include="Point.cpp" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
+    <ClInclude Include="14standart.h" />
     <ClInclude Include="ICloneable.h" />
     <ClInclude Include="Inheritance.h" />
     <ClInclude Include="MethodAndFieldsPtrs.h" />

@@ -14,9 +14,13 @@ int& getA(my_struct& st)
     return *ptr;
 }
 
+static int func()
+{
+    return 0;
+}
+
 int& getB(my_struct& st)
 {
-
     int* ptr = (int*)((char*)&st + 4);
     cout << *ptr << endl;
     return *ptr;
