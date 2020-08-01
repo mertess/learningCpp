@@ -13,6 +13,7 @@
 #include "MultiInheritance.h"
 #include "MethodAndFieldsPtrs.h"
 #include "14standart.h"
+#include <memory> //unique_ptr
 using namespace std;
 #define MAX(x, y, r){ int sx = x; int sy = y; if (sx > sy) r = sx; else r = sy }
 
@@ -67,6 +68,15 @@ int main()
     //cout << compare(s1, s2, &String::Size) << " compare" << endl;
     //--------------------------------------------------------
     print_values(std::cout, 0, 3.5);
+    //--------------------------------------------------------
+    //test def base construct
+    Child* c = new Child();
+    //--------------------------------------------------------
+    //явный вызов конструктора перемещения или оператора - std::move(some instance);
+    //unique_ptr не имеет констукторов копирования и операторов копирования, оно горантирует, что будет единственный указатель
+    unique_ptr<Child> ptr(new Child());
+    unique_ptr<Child> ptr2(std::move(ptr)); //указатель переходит к ptr2
+    ptr = std::move(ptr2); //указатель переходит к ptr
     //--------------------------------------------------------
     SharedStringPtr pt;
     {
