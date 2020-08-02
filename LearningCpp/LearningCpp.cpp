@@ -16,8 +16,11 @@
 #include <memory> //unique_ptr
 #include "cpp14tupletopair.h" //func to_pair
 #include <tuple>
+#include <functional> //std::function
 using namespace std;
 #define MAX(x, y, r){ int sx = x; int sy = y; if (sx > sy) r = sx; else r = sy }
+
+int someMethod(int x, int y) { return x * y; }
 
 int main()
 {
@@ -69,15 +72,15 @@ int main()
     String s2(6, 'b');
     //cout << compare(s1, s2, &String::Size) << " compare" << endl;
     //--------------------------------------------------------
-    print_values(std::cout, 0, 3.5);
+    cpp14::print_values(std::cout, 0, 3.5);
     //--------------------------------------------------------
     //test def base construct
-    Child* child = new Child();
+    cpp14::Child* child = new cpp14::Child();
     //--------------------------------------------------------
     //явный вызов конструктора перемещения или оператора - std::move(some instance);
     //unique_ptr не имеет констукторов копирования и операторов копирования, оно горантирует, что будет единственный указатель
-    unique_ptr<Child> ptr(new Child());
-    unique_ptr<Child> ptr2(std::move(ptr)); //указатель переходит к ptr2
+    unique_ptr<cpp14::Child> ptr(new cpp14::Child());
+    unique_ptr<cpp14::Child> ptr2(std::move(ptr)); //указатель переходит к ptr2
     ptr = std::move(ptr2); //указатель переходит к ptr
     //--------------------------------------------------------
     auto t = std::make_tuple(0, 3.5, "Hello");
@@ -85,6 +88,15 @@ int main()
     cout << p.first << " first" << endl;
     cout << p.second << " second" << endl;
     // p содержит 3.5 и "Hello"
+    //--------------------------------------------------------
+    //std:;initializer_list
+    cpp14::Array<int> arrInitConstr = { 1, 2, 3, 4 };
+    //--------------------------------------------------------
+    //тупо delegate, класс обертка над указателем на методы классов или указателем на функции
+    std::function<int(int, int)> delegate_ = &someMethod;
+    //лямбда
+    auto square_fun = [](int& x) { x *= x; };
+    std::function<void(int, int)> lambda_func = [](auto a, auto b) {};
     //--------------------------------------------------------
     SharedStringPtr pt;
     {
