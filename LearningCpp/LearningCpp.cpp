@@ -14,6 +14,8 @@
 #include "MethodAndFieldsPtrs.h"
 #include "14standart.h"
 #include <memory> //unique_ptr
+#include "cpp14tupletopair.h" //func to_pair
+#include <tuple>
 using namespace std;
 #define MAX(x, y, r){ int sx = x; int sy = y; if (sx > sy) r = sx; else r = sy }
 
@@ -70,13 +72,19 @@ int main()
     print_values(std::cout, 0, 3.5);
     //--------------------------------------------------------
     //test def base construct
-    Child* c = new Child();
+    Child* child = new Child();
     //--------------------------------------------------------
     //явный вызов конструктора перемещения или оператора - std::move(some instance);
     //unique_ptr не имеет констукторов копирования и операторов копирования, оно горантирует, что будет единственный указатель
     unique_ptr<Child> ptr(new Child());
     unique_ptr<Child> ptr2(std::move(ptr)); //указатель переходит к ptr2
     ptr = std::move(ptr2); //указатель переходит к ptr
+    //--------------------------------------------------------
+    auto t = std::make_tuple(0, 3.5, "Hello");
+    std::pair<double, char const*> p = to_pair<1, 2>(t);
+    cout << p.first << " first" << endl;
+    cout << p.second << " second" << endl;
+    // p содержит 3.5 и "Hello"
     //--------------------------------------------------------
     SharedStringPtr pt;
     {

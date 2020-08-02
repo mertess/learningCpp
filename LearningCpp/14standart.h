@@ -25,7 +25,7 @@ class Base
 public:
 	Base() = default;
 	Base(int a, int b) {}
-	virtual ~Base();
+	virtual ~Base() {}
 	virtual void func() {}
 };
 

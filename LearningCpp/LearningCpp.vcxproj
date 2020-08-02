@@ -158,6 +158,7 @@
   <ItemGroup>
     <ClInclude Include="Array.h" />
     <ClInclude Include="14standart.h" />
+    <ClInclude Include="cpp14tupletopair.h" />
     <ClInclude Include="ICloneable.h" />
     <ClInclude Include="Inheritance.h" />
     <ClInclude Include="MethodAndFieldsPtrs.h" />
