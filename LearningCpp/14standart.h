@@ -49,7 +49,7 @@ namespace cpp14 {
 	{
 	public: //&& - rvalue reference обычные конструкторы копирования и т.д. lvalue 
 		TransferExample(TransferExample&& other) {}
-		TransferExample& operator=(TransferExample&& other) {}
+		TransferExample& operator=(TransferExample&& other) { return *this; }
 	};
 
 	//аналог params T[] list в C#

@@ -163,10 +163,12 @@
     <ClInclude Include="Inheritance.h" />
     <ClInclude Include="MethodAndFieldsPtrs.h" />
     <ClInclude Include="MultiInheritance.h" />
+    <ClInclude Include="MyStdMoveAndForward.h" />
     <ClInclude Include="PartialSpecializationTemplates.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="SharedPtr.h" />
     <ClInclude Include="Smthing.h" />
+    <ClInclude Include="STL.h" />
     <ClInclude Include="String.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

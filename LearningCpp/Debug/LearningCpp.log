@@ -1,4 +1,4 @@
 ﻿  LearningCpp.cpp
-C:\Users\trtr\source\repos\LearningCpp\LearningCpp\LearningCpp.cpp(33,17): warning C4244: аргумент: преобразование "double" в "const int", возможна потеря данных
-C:\Users\trtr\source\repos\LearningCpp\LearningCpp\LearningCpp.cpp(67,13): warning C4101: MyFunc: неиспользованная локальная переменная
+C:\Users\trtr\source\repos\LearningCpp\LearningCpp\LearningCpp.cpp(41,17): warning C4244: аргумент: преобразование "double" в "const int", возможна потеря данных
+C:\Users\trtr\source\repos\LearningCpp\LearningCpp\LearningCpp.cpp(75,13): warning C4101: MyFunc: неиспользованная локальная переменная
   LearningCpp.vcxproj -> C:\Users\trtr\source\repos\LearningCpp\Debug\LearningCpp.exe

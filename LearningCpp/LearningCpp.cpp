@@ -17,10 +17,17 @@
 #include "cpp14tupletopair.h" //func to_pair
 #include <tuple>
 #include <functional> //std::function
+#include "MyStdMoveAndForward.h"
 using namespace std;
 #define MAX(x, y, r){ int sx = x; int sy = y; if (sx > sy) r = sx; else r = sy }
 
 int someMethod(int x, int y) { return x * y; }
+
+template<typename TFunc, typename... TArgs>
+auto apply(TFunc const& func, TArgs&&... args) -> decltype(func(std::forward<TArgs>(args)...))
+{
+    return func(std::forward<TArgs>(args)...);
+}
 
 int main()
 {
@@ -40,19 +47,12 @@ int main()
     int a = 27;
     int const b = 412;
     int* pa = &a;
-
     int const c = a;
-
     int d = b;
-
     int const* p1 = pa;
-
     int* const* p2 = &pa;
-
     int const** p3 = const_cast<int const**>(&pa);
-
     int const* const* p4 = &pa;
-
     double* double_arr = new double[10];
     char* ch_arr = reinterpret_cast<char*>(double_arr);
     //int a = reinterpret_cast<int&>(arr);
@@ -97,6 +97,15 @@ int main()
     //лямбда
     auto square_fun = [](int& x) { x *= x; };
     std::function<void(int, int)> lambda_func = [](auto a, auto b) {};
+    //--------------------------------------------------------
+    myMove(new String("hi"));
+    //--------------------------------------------------------
+    auto fun = [](std::string a, std::string const& b) { return a += b; };
+    std::string s("world!");
+    // s передаётся по lvalue ссылке,
+    // а временный объект по rvalue ссылке 
+    s = apply(fun, std::string("Hello, "), s);
+    cout << "s = " << s << endl;
     //--------------------------------------------------------
     SharedStringPtr pt;
     {
