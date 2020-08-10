@@ -18,6 +18,8 @@
 #include <tuple>
 #include <functional> //std::function
 #include "MyStdMoveAndForward.h"
+#include "STL.h"
+#include "Algs.h"
 using namespace std;
 #define MAX(x, y, r){ int sx = x; int sy = y; if (sx > sy) r = sx; else r = sy }
 
@@ -106,6 +108,16 @@ int main()
     // а временный объект по rvalue ссылке 
     s = apply(fun, std::string("Hello, "), s);
     cout << "s = " << s << endl;
+    //--------------------------------------------------------
+    main_method();
+    //--------------------------------------------------------
+    std::vector<int> v = { 0, 1, 2, 3, 4, 5, 6};
+    v.erase(remove_nthv3(v.begin(), v.end(), 3), v.end());
+    for (auto x : v)
+    {
+        std::cout << "after removing " << x << endl;
+    }
+    // теперь в v = {0,1,2,3,4,6,7,8,9,10};
     //--------------------------------------------------------
     SharedStringPtr pt;
     {
